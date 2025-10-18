@@ -1,0 +1,182 @@
+  :root {
+      --brand-orange: #F0970A;
+      --brand-darkblue: #2D536F;
+      --brand-white: #FFFFFF;
+      --brand-lightgray: #F7F8FA;
+      --brand-text-dark: #333333;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--brand-text-dark);
+      scroll-behavior: smooth;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(rgba(45, 83, 111, 0.7), rgba(45, 83, 111, 0.7)),
+                  url('BA82ABC8-38CE-4C33-BC9D-187CAE814265.jpeg') center/cover no-repeat;
+      color: var(--brand-white);
+      text-align: center;
+      padding: 120px 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    /* BUTTON */
+    .cta-btn {
+      background-color: var(--brand-orange);
+      color: var(--brand-white);
+      padding: 12px 30px;
+      border: none;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .cta-btn:hover {
+      background-color: #d38307;
+      color: var(--brand-white);
+    }
+
+    /* SECTION TITLES */
+    .section-title {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 40px;
+      color: var(--brand-darkblue);
+    }
+
+/* CARD DOS PRODUTOS */
+.cards-container {
+  display: grid; 
+  /* CRUCIAL: Definir 3 colunas de 1 fração (1fr) garante que
+     a largura total seja dividida em 3 partes iguais. */
+  grid-template-columns: repeat(3, 1fr); 
+  
+  gap: 24px; /* O espaçamento entre os cards */
+  
+  /* Se precisar centralizar o grid no corpo da página: */
+  justify-items: center; 
+  width: 100%; /* Garante que o container use a largura total */
+  max-width: 1200px; /* Defina a largura máxima do seu layout */
+  margin: 0 auto; /* Centraliza o container na página */
+}
+
+/* Seu CSS para o Card e Conteúdo: */
+.card {
+  
+  background: #F8F8F8;
+  padding: 40px;  
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; 
+  
+  /* Flexbox para alinhamento interno (imagem, título, texto) */
+  display: flex;
+  flex-direction: column; 
+  height: 100%; /* CRUCIAL: Preenche a altura da célula do Grid */
+}
+
+.card:hover {
+  /* Efeito 1: Levemente "levanta" o card */
+  transform: translateY(-5px); 
+  
+  /* Efeito 2: Aumenta a sombra para dar profundidade (efeito 3D) */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.card img {
+  width: 100%;
+  height: 240px; 
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 16px;
+  /* ESSENCIAL: Faz o bloco crescer para preencher o espaço restante */
+  flex-grow: 1; 
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card h3 {
+  /* Garante que o título tem sua altura natural e empurra o parágrafo */
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+  
+  /* ************************************************* */
+  /* NOVO AJUSTE: Força o parágrafo a crescer para preencher o espaço */
+  flex-grow: 1; 
+  /* ************************************************* */
+  
+  /* Remova o código de -webkit-line-clamp se ele estiver causando problemas
+     e deixe o texto ser cortado pelo overflow: hidden do card: */
+  /* overflow: hidden; */
+}
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .card {
+    max-width: 90%;
+  }
+
+  .produto-img {
+    height: 260px;
+  }
+}
+
+
+    /* FORM */
+    form .form-control:focus {
+      border-color: var(--brand-orange);
+      box-shadow: 0 0 0 0.2rem rgba(240, 151, 10, 0.25);
+    }
+
+    section.bg-light {
+      background-color: var(--brand-lightgray);
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: var(--brand-darkblue);
+      color: var(--brand-white);
+      padding: 20px 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* WHATSAPP FLOATING BUTTON */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 28px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      transition: 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #20b358;
+    }
+
+    .whatsapp-icon {
+      margin-top: 16px;
+    }
