@@ -23,4 +23,6 @@ document.getElementById("visitaForm").addEventListener("submit", function(e) {
         msg.innerHTML = "⚠️ Por favor, preencha todos os campos.";
         msg.style.color = "red";
       }
-    });
+});
+    
+document.getElementById("ano-atual").innerHTML = new Date().getFullYear();
